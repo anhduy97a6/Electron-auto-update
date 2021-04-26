@@ -1,6 +1,6 @@
 {
   "name": "electron-demo-auto-update",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "test auto update",
   "main": "main.js",
   "repository": {
