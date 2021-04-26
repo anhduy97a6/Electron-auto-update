@@ -30,9 +30,10 @@
 <p id="version"></p>
 <h1>I am Duy</h1>
 <h1>Update version rồi nhé</h1>
-<div style="color: red">Good morning</div>
+<div style="color: red">Good morning 1.0.5</div>
 <div id="notification" class="hidden">
     <p id="message"></p>
+
     <button id="close-button" onClick="closeNotification()">
         Close
     </button>
@@ -51,12 +52,6 @@
     ipcRenderer.on('app_version', (event, arg) => {
         ipcRenderer.removeAllListeners('app_version');
         version.innerText = 'Version ' + arg.version;
-    });
-
-    ipcRenderer.on('update_available', () => {
-        ipcRenderer.removeAllListeners('update_available');
-        message.innerText = 'A new update is available. Downloading now...';
-        notification.classList.remove('hidden');
     });
 
     ipcRenderer.on('update_downloaded', () => {
