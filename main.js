@@ -22,11 +22,13 @@ function createWindow () {
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
-    mainWindow.once('ready-to-show', () => {
-        autoUpdater.checkForUpdatesAndNotify();
-        console.log(autoUpdater.getFeedURL());
-    });
 }
+
+setInterval(() => {
+    console.log("start");
+    console.log(autoUpdater.getFeedURL());
+    autoUpdater.checkForUpdatesAndNotify();
+}, 60000)
 
 app.on('ready', () => {
     createWindow();
